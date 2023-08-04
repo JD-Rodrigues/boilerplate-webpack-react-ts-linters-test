@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test/issues"
   },
-  "homepage": "https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test#readme"
+  "homepage": "https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test#readme",
+  "devDependencies": {
+    "lint-staged": "^13.2.3"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "npm run lint"
+    ]
+  }
 }
