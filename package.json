@@ -1,0 +1,19 @@
+{
+  "name": "boilerplate-webpack-react-ts-linters-test",
+  "version": "1.0.0",
+  "description": "Boilerplate profissional para desenvolvimento utilizando React, Typescript, linters e testes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test.git"
+  },
+  "author": "Domingos Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test/issues"
+  },
+  "homepage": "https://github.com/JD-Rodrigues/boilerplate-webpack-react-ts-linters-test#readme"
+}
