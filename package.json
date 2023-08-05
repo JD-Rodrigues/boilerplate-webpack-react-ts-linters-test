@@ -4,7 +4,7 @@
   "description": "Boilerplate profissional para desenvolvimento utilizando React, Typescript, linters e testes.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundle": "webpack --config webpack/webpack.config.js"
   },
   "repository": {
     "type": "git",
