@@ -1,5 +1,5 @@
 function teste() {
-  return 'Testandooooo!'
+  return 'Testandoooooo!'
 }
 
 module.exports = teste
