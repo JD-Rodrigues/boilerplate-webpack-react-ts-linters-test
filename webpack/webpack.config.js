@@ -2,7 +2,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'production',
@@ -16,14 +16,24 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
+  },
+  devServer: {
+    static: ['dist']
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/main/index.html'
     }),
-    new EnvironmentPlugin({ ...process.env })
+    new EnvironmentPlugin({ ...process.env }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
+    })
   ]
 }
