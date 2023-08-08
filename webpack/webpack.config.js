@@ -8,8 +8,9 @@ module.exports = {
   mode: 'production',
   entry: './src/main/index',
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, '../dist'),
+    clean: true
   },
   module: {
     rules: [
@@ -32,8 +33,6 @@ module.exports = {
       template: './src/main/index.html'
     }),
     new EnvironmentPlugin({ ...process.env }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.css'
-    })
+    new MiniCssExtractPlugin()
   ]
 }
