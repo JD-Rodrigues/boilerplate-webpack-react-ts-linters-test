@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './styles.scss'
+import './styles.scss'
 
 document.querySelector(
   '#root'
