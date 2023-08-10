@@ -27,6 +27,13 @@ module.exports = {
         test: /\.js$/,
         enforce: 'pre',
         use: ['source-map-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
       }
     ]
   },
