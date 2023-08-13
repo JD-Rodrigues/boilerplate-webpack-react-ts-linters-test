@@ -4,9 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const isDevelopment = process.env.MODE === 'DEV'
+const isProduction = process.env.MODE === 'PROD'
+
 module.exports = {
   mode: 'production',
-  entry: './src/main/index',
+  entry: './src/main/index.ts',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../dist'),
@@ -32,7 +35,30 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/i,
         loader: 'file-loader',
         options: {
-          name: '[name].[hash].[ext]'
+          name: '[name].[ext]',
+          outputPath: 'assets/images'
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'swc-loader',
+          options: {
+            parseMap: true,
+            jsc: {
+              parser: { syntax: 'typescript', tsx: true },
+              target: 'es2021',
+              minify: { compress: isProduction },
+              transform: {
+                react: {
+                  runtime: 'automatic',
+                  refresh: isDevelopment
+                }
+              }
+            },
+            minify: true
+          }
         }
       }
     ]
