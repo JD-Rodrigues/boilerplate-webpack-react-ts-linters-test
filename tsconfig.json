@@ -25,6 +25,6 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts", "src/main/assets/assetsImporter.js"],
   "exclude": ["node_modules", "dist", "src/**/*.test*"]
 }
