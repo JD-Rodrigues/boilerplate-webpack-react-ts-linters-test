@@ -7,7 +7,7 @@ import './assets/assetsImporter'
 
 document.querySelector(
   '#root'
-)!.innerHTML = `O número da porta é ${process.env.PORT}`
+)!.innerHTML = `Olá, meus amigos! O número da porta é ${process.env.PORT}`
 
 const pic = document.createElement('img')
 pic.src = './assets/images/raw-logo.png'
