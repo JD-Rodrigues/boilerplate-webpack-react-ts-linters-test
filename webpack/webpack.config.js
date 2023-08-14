@@ -9,7 +9,7 @@ const isProduction = process.env.MODE === 'PROD'
 
 module.exports = {
   mode: 'production',
-  entry: './src/main/index.ts',
+  entry: './src/main/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../dist'),
