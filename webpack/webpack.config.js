@@ -1,17 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const entryMap = require('./generateEntries')
 
 const isDevelopment = process.env.MODE === 'DEV'
 const isProduction = process.env.MODE === 'PROD'
 
 module.exports = {
   mode: 'production',
-  entry: './src/main/index.tsx',
+  entry: entryMap,
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
     clean: true
   },
