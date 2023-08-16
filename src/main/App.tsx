@@ -9,11 +9,11 @@ const App: React.FC = () => {
     <>
       <p className="teste">Olá, pessoal!!</p>
       <img src={logo} />
-      <img src={envelope} />
+      <img src={envelope} /> { /* svg path inserted in src img attribute */ }
       <img src={fonte} />
-      <Envelope />
+      <Envelope /> { /* svg inserted as React Component */ }
     </>
   )
 }
-
+ 
 export default App
