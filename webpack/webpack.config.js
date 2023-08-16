@@ -33,6 +33,10 @@ module.exports = {
         use: ['source-map-loader']
       },
       {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/i,
         loader: 'file-loader',
         options: {
