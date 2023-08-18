@@ -1,16 +1,26 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line import/no-unused-modules
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const EslintWebpackPlugin = require('eslint-webpack-plugin')
+const { dependencies } = require('../package.json')
 const path = require('path')
-const entryMap = require('./generateEntries')
+
+const sharedLibsPaths = Object.keys(dependencies)
 
 const isDevelopment = process.env.MODE === 'DEV'
 const isProduction = process.env.MODE === 'PROD'
 
 module.exports = {
   mode: 'production',
-  entry: entryMap,
+  entry: {
+    main: {
+      import: './src/main/main.tsx',
+      dependOn: 'shared'
+    },
+    shared: [...sharedLibsPaths]
+  },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, '../dist'),
@@ -19,15 +29,14 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all',
-      minSize: 0,
       maxSize: 24000,
-      maxInitialRequests: Infinity
+      maxInitialRequests: 1
     }
   },
   performance: {
     maxEntrypointSize: 300000,
-    assetFilter: function(assetFilename) {
-      return assetFilename.endsWith('.js');
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.js')
     }
   },
   devtool: 'source-map',
@@ -48,14 +57,14 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
       },
       {
         test: /\.(png|jpg|gif|svg)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'assets/images',
+          outputPath: 'assets/images'
         }
       },
       {
@@ -91,5 +100,8 @@ module.exports = {
     }),
     new EnvironmentPlugin({ ...process.env }),
     new MiniCssExtractPlugin(),
+    new EslintWebpackPlugin({
+      failOnWarning: true
+    })
   ]
 }

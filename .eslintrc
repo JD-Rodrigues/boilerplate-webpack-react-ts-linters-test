@@ -83,6 +83,10 @@
     "space-before-function-paren": "off",
     "eslint-disable-next-line": "off",
     "react/display-name": "off",
+    "import/no-unused-modules": [
+      2,
+      { "unusedExports": true, "missingExports": true }
+    ],
     "prettier/prettier": "error"
   },
   "overrides": [

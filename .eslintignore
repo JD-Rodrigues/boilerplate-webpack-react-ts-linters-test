@@ -1,8 +1,9 @@
 dist
 .jest
-src/ui/assets/*
+src/main/assets/*
 yarn.lock
 .gitattributes
 .gitignore
 .prettierignore
 coverage
+/node_modules/
