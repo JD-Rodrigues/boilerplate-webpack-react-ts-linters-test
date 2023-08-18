@@ -16,6 +16,20 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     clean: true
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 0,
+      maxSize: 24000,
+      maxInitialRequests: Infinity
+    }
+  },
+  performance: {
+    maxEntrypointSize: 300000,
+    assetFilter: function(assetFilename) {
+      return assetFilename.endsWith('.js');
+    }
+  },
   devtool: 'source-map',
   module: {
     rules: [
@@ -76,6 +90,6 @@ module.exports = {
       template: './src/main/index.html'
     }),
     new EnvironmentPlugin({ ...process.env }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ]
 }
