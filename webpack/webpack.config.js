@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line import/no-unused-modules
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+// eslint-disable-next-line import/no-unused-modules
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -102,6 +104,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new EslintWebpackPlugin({
       failOnWarning: true
-    })
+    }),
+    isDevelopment && new ReactRefreshWebpackPlugin()
   ]
 }
