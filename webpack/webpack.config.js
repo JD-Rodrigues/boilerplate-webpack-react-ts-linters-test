@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line import/no-unused-modules
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+// eslint-disable-next-line import/no-unused-modules
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -9,11 +11,11 @@ const path = require('path')
 
 const sharedLibsPaths = Object.keys(dependencies)
 
-const isDevelopment = process.env.MODE === 'DEV'
-const isProduction = process.env.MODE === 'PROD'
+const isDevelopment = process.env.MODE === 'development'
+const isProduction = process.env.MODE === 'production'
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.MODE,
   entry: {
     main: {
       import: './src/main/main.tsx',
@@ -102,6 +104,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new EslintWebpackPlugin({
       failOnWarning: true
-    })
+    }),
+    isDevelopment && new ReactRefreshWebpackPlugin()
   ]
 }

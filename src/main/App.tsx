@@ -9,7 +9,7 @@ import envelope from './assets/images/envelope.svg'
 const App: React.FC = () => {
   return (
     <>
-      <p className="teste">Olá, pessoal!!</p>
+      <p className="teste">{`Olá, pessoal!! O número da porta é este: ${process.env.PORT}.`}</p>
       <img alt="" src={logo} />
       <img alt="" src={envelope} />
       {/* svg path inserted in src img attribute */}
