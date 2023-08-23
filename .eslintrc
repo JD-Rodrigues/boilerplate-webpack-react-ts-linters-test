@@ -14,8 +14,10 @@
       "@typescript-eslint/parser": [".ts", ".tsx"]
     },
     "import/resolver": {
-      "typescript": {
-        "project": "tsconfig.json"
+      "alias": {
+        "map": [
+            [ "@images", "./src/main/assets/images" ]
+        ]
       }
     }
   },

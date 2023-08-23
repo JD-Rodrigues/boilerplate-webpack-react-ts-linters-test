@@ -1,10 +1,10 @@
 import './styles.scss'
-import logo from 'images/raw-logo.png'
-import fonte from './assets/images/fonte.png'
+import logo from '@images/raw-logo.png'
+import fonte from '@images/fonte.png'
 // eslint-disable-next-line import/no-duplicates
-import { ReactComponent as Envelope } from './assets/images/envelope.svg'
+import { ReactComponent as Envelope } from '@images/envelope.svg'
 // eslint-disable-next-line import/no-duplicates
-import envelope from './assets/images/envelope.svg'
+import envelope from '@images/envelope.svg'
 
 const App: React.FC = () => {
   return (
