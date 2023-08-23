@@ -1,5 +1,5 @@
 import './styles.scss'
-import logo from './assets/images/raw-logo.png'
+import logo from 'images/raw-logo.png'
 import fonte from './assets/images/fonte.png'
 // eslint-disable-next-line import/no-duplicates
 import { ReactComponent as Envelope } from './assets/images/envelope.svg'

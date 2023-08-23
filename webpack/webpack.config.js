@@ -28,6 +28,11 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     clean: true
   },
+  resolve: {
+    alias: {
+      images: path.resolve(__dirname, '../src/main/assets/images')
+    }
+  },
   optimization: {
     splitChunks: {
       chunks: 'all',

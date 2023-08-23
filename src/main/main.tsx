@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unused-modules
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 
