@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "paths": {
+      "@components/*": ["./presentation/components/*"]
+    },
     "target": "ES2021",
     "lib": ["dom", "dom.iterable", "esnext"],
     "esModuleInterop": true,

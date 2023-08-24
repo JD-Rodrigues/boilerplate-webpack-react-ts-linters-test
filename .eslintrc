@@ -16,7 +16,8 @@
     "import/resolver": {
       "alias": {
         "map": [
-            [ "@images", "./src/main/assets/images" ]
+            [ "@images", "./src/presentation/assets/images" ],
+            [ "@components", "./src/presentation/components" ] 
         ]
       }
     }

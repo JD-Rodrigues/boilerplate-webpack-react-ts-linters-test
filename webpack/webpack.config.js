@@ -30,7 +30,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@images': path.resolve(__dirname, '../src/main/assets/images')
+      '@images': path.resolve(__dirname, '../src/presentation/assets/images'),
+      '@components': path.resolve(__dirname, '../src/presentation/components')
     }
   },
   optimization: {
