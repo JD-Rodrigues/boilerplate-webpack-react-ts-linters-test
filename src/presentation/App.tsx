@@ -1,4 +1,4 @@
-import './styles.scss'
+import styles from './styles.module.scss'
 import logo from '@images/raw-logo.png'
 import fonte from '@images/fonte.png'
 // eslint-disable-next-line import/no-duplicates
@@ -10,7 +10,9 @@ import ButtonExample from '@components/Button/index.tsx'
 const App: React.FC = () => {
   return (
     <>
-      <p className="teste">{`Olá, pessoal!! O número da porta é este: ${process.env.PORT}.`}</p>
+      <p
+        className={styles.teste}
+      >{`Olá, pessoal!! O número da porta é este: ${process.env.PORT}.`}</p>
       <ButtonExample />
       <img alt="" src={logo} />
       <img alt="" src={envelope} />
